@@ -35,7 +35,7 @@ AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://kumarsatyaa6207:fOPOr0gGdQhqmBEZ@cluster0.qk8umiz.mongodb.net/?retryWrites=true&w=majority")
 DATABASE_NAME = environ.get('DATABASE_NAME', "cluster0")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'new_files')
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 
 # Others
@@ -66,7 +66,7 @@ REQ_CHANNEL = int(environ.get('REQ_CHANNEL', '-1001844519722'))
 
 #ai
 OPENAI_API = environ.get("OPENAI_API","")
-AI = is_enabled((environ.get("AI","True")), False)
+AI = is_enabled((environ.get("AI","false")), True)
 LAZY_AI_LOGS = int(environ.get("LAZY_AI_LOGS","-1001844519722")) #GIVE YOUR NEW LOG CHANNEL ID TO STORE MESSAGES THAT THEY SEARCH IN BOT PM.... [ i have added this to keep an eye on the users message, to avoid misuse of LazyPrincess ]
 # Requested Content template variables ---
 ADMIN_USRNM = environ.get('ADMIN_USRNM','ipapcornbot_owner') # WITHOUT @
@@ -106,12 +106,6 @@ SESSION_NAME = str(environ.get('SESSION_NAME', 'LazyBot'))
 MULTI_CLIENT = False
 name = str(environ.get('name', 'LazyPrincess'))
 PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
-if 'DYNO' in environ:
-    ON_HEROKU = True
-    APP_NAME = str(getenv('APP_NAME'))
-
-else:
-    ON_HEROKU = False
 HAS_SSL=bool(getenv('HAS_SSL',False))
 if HAS_SSL:
     URL = "https://{}/".format(FQDN)
@@ -127,11 +121,11 @@ if SELF_DELETE == "True":
 
 # Download Tutorial Button #
 DOWNLOAD_TEXT_NAME = "📥 HOW TO DOWNLOAD 📥"
-DOWNLOAD_TEXT_URL = "https://t.me/LazyDeveloper"
+DOWNLOAD_TEXT_URL = "https://t.me/streaamdb"
 
 # Custom Caption Under Button #
 CAPTION_BUTTON = "Get Updates"
-CAPTION_BUTTON_URL = "https://t.me/LazyDeveloper"
+CAPTION_BUTTON_URL = "https://t.me/streaamdb"
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")
